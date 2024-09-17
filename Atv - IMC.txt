@@ -1,0 +1,135 @@
+- CALCULA IMC
+
+using System;
+public class Program
+{
+public static void Main()
+{
+Console.WriteLine("CALCULADORA DE IMC!");
+// INPUT 1: Peso do usuário:
+Console.WriteLine("Informe seu peso (kg) ");
+double peso = Convert.ToDouble(Console.ReadLine());
+// INPUT 2: Altura do usuário:
+Console.WriteLine("Informe sua altura (cm): ");
+double alturaCm = Convert.ToDouble(Console.ReadLine());
+double alturaM = alturaCm / 100; // Converte para metros
+// Variável do IMC já constando cálculo:
+double iMc = peso / (alturaM * alturaM);
+// Condicionais para imprimir GRAU DE IMC:
+if (iMc <= 18.5)
+Console.WriteLine($"{iMc:F2}: ABAIXO DO PESO");
+else if (iMc >= 18.6 && iMc <= 24.9)
+Console.WriteLine($"{iMc:F2}:PESO NORMAL");
+else if (iMc >= 25 && iMc <= 29.9)
+Console.WriteLine($"{iMc:F2}: SOBREPESO");
+else if (iMc >= 30 && iMc <= 34.9)
+Console.WriteLine($"{iMc:F2}: OBESIDADE GRAU I");
+else if (iMc >= 35 && iMc <= 39.9)
+Console.WriteLine($"{iMc:F2}:OBESIDADE GRAU II");
+else
+Console.WriteLine($"{iMc:F2}: OBESIDADE GRAU III");
+//INPUT 3: Doenças
+bool probl3ma = false;
+string problemas;
+return1:
+do
+{
+Console.WriteLine("\nPossui algum dos problemas listados abaixo? \n" + "(1)
+
+Diabetes\n" +
+
+"(2) Problemas nas Articulações (ex: Atrite)\n"
+
++
+
+"(3) Problemas cardíacos\n" +
+"(4) Obesidade\n" +
+"(5) Dores nas Costas\n" +
+"(6) Ansiedade ou estresse\n" +
+"(7) Nenhuma\n"+
+"(x) SAIR!");
+problemas = Console.ReadLine();
+// Condicionais para INDICAÇÕES DE ATIVIDADES FÍSICAS:
+switch (problemas)
+{
+case "1":
+probl3ma = true;
+Console.WriteLine("- - INDICAÇÕES DE ATIVIDADES
+
+FÍSICAS PARA DIABÉTICOS - -");
+
+Console.WriteLine("- Caminhadas rápidas \n - Natação \n -
+Treinamento de resistência: pesos leves a moderados\n - Exercícios aeróbicos de baixa
+intensidade \n - Yoga: ajuda no controle do estresse e glicemia");
+
+break;
+case "2":
+probl3ma = true;
+Console.WriteLine("- - INDICAÇÕES DE ATIVIDADES
+
+FÍSICAS PARA PROBLEMAS NAS ARTICULAÇÕES - -");
+
+Console.WriteLine("- Hidroginástica\n - Caminhadas leves\n -
+Ciclismo: com baixa resistência\n - Alongamentos \n - Yoga ou Pilates: fortalecimento se
+sobrecarga articular");
+
+break;
+case "3":
+probl3ma = true;
+Console.WriteLine("- - INDICAÇÕES DE ATIVIDADES
+
+FÍSICAS PARA PROBLEMAS CARDÍACOS - -");
+
+Console.WriteLine("- Caminhadas moderadas\n - Bicicleta
+leve\n - Natação\n - Exercícios de alongamento\n - Tai Chi: uma forma de exercício suave
+que também ajuda com equilíbrio");
+break;
+case "4":
+Console.WriteLine("- - INDICAÇÕES DE ATIVIDADES
+
+FÍSICAS PARA PROBLEMAS CARDÍACOS - -");
+
+Console.WriteLine("- Caminhadas rápidas \n - Natação\n -
+Exercícios em bicicleta ergométrica\n - Exercícios aeróbicos de baixo impacto \n -
+Hidroginástica");
+
+break;
+case "5":
+probl3ma = true;
+Console.WriteLine("- - INDICAÇÕES DE ATIVIDADES
+
+FÍSICAS PARA DOR NAS COSTAS - -");
+
+Console.WriteLine("- Caminhada em ritmo leve\n - Natação ou
+hidroginástica\n - Yoga com foco em alongamento e fortalecimento do núcleo\n - Pilates:
+Para fortalecimento do núcleo\n - Exercícios de alongamento e mobilidade");
+
+break;
+case "6":
+probl3ma = true;
+Console.WriteLine("- - INDICAÇÕES DE ATIVIDADES
+
+FÍSICAS PARA ANSIEDADE E ESTRESSE - -");
+
+Console.WriteLine("- Yoga\n - Tai Chi\n - Meditação guiada:
+combinada com alongamentos \n - Caminhadas ao ar livre\n - Dança: para liberar
+endorfina");
+break;
+case "7":
+probl3ma = true;
+Console.WriteLine("BOM PRA VOCÊ. CONTINUE ASSIM!
+
+TCHAU.");
+
+break;
+case "x":
+probl3ma = false;
+Console.WriteLine("ATÉ MAIS!");
+break;
+}
+
+}
+while (probl3ma == true);
+goto return1;
+}
+}
